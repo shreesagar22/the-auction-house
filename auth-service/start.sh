@@ -1,0 +1,1 @@
+serverless deploy --verbose --stage dev
