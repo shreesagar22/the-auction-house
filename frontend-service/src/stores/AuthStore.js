@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action } from "mobx";
 
 class AuthStore {
   @observable token = null;
@@ -8,7 +8,7 @@ class AuthStore {
   @action
   setToken(token) {
     this.token = token;
-    console.log('Token set', token);
+    console.log("Token set", token);
   }
 
   @action
