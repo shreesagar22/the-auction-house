@@ -7,7 +7,7 @@ import {
   makeStyles,
   TextField,
 } from "@material-ui/core";
-import PictureUpload from '../components/PictureUpload';
+import PictureUpload from "../components/PictureUpload";
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -46,7 +46,7 @@ const CreateAuctionPage = ({ auctionStore, routerHistory }) => {
           />
         </FormControl>
         <div className={classes.pictureUpload}>
-          <PictureUpload onPictureSelected={base64 => setBase64(base64)} />
+          <PictureUpload onPictureSelected={(base64) => setBase64(base64)} />
         </div>
         <div>
           <Button

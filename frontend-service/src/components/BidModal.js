@@ -61,13 +61,14 @@ const BidModal = ({ auctionStore, onCancel }) => {
                 }
               />
             </FormControl>
-            <br/><br/>
+            <br />
+            <br />
             <div>
               <Button
-                style={{ float: 'right' }}
+                style={{ float: "right" }}
                 onClick={() => auctionStore.placeBid()}
               >
-                  Place Bid
+                Place Bid
               </Button>
             </div>
           </form>

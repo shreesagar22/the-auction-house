@@ -1,22 +1,22 @@
-import React, { Fragment, useState } from 'react';
-import { makeStyles, ButtonBase } from '@material-ui/core';
-import PictureIcon from '@material-ui/icons/BurstMode';
+import React, { Fragment, useState } from "react";
+import { makeStyles, ButtonBase } from "@material-ui/core";
+import PictureIcon from "@material-ui/icons/BurstMode";
 
 const useStyles = makeStyles({
   container: {
     width: 300,
     height: 100,
-    border: '2px dashed #a1a1a1',
+    border: "2px dashed #a1a1a1",
     borderRadius: 5,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'copy',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    cursor: "copy",
   },
   preview: {
     width: 300,
     borderRadius: 5,
-  }
+  },
 });
 
 const PictureUpload = ({ onPictureSelected }) => {
@@ -24,7 +24,7 @@ const PictureUpload = ({ onPictureSelected }) => {
   const classes = useStyles();
   let input;
 
-  const handleFileChange = async e => {
+  const handleFileChange = async (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
 
@@ -38,27 +38,21 @@ const PictureUpload = ({ onPictureSelected }) => {
   return (
     <Fragment>
       <input
-        style={{ display: 'none' }}
-        ref={ref => input = ref}
+        style={{ display: "none" }}
+        ref={(ref) => (input = ref)}
         type="file"
         onChange={handleFileChange}
       />
-      
-      {
-        !base64 && (
-          <ButtonBase onClick={() => input.click()}>
-            <div className={classes.container}>
-              <PictureIcon color="disabled" />
-            </div>
-          </ButtonBase>
-        )
-      }
 
-      {
-        base64 && (
-          <img className={classes.preview} src={base64} alt="Auction" />
-        )
-      }
+      {!base64 && (
+        <ButtonBase onClick={() => input.click()}>
+          <div className={classes.container}>
+            <PictureIcon color="disabled" />
+          </div>
+        </ButtonBase>
+      )}
+
+      {base64 && <img className={classes.preview} src={base64} alt="Auction" />}
     </Fragment>
   );
 };
