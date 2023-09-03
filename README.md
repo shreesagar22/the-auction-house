@@ -1,2 +1,2 @@
 ### charity-auction-app
-# microservice-arch
+# A simple serverless application i created while learning serverless
